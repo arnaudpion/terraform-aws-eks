@@ -1,4 +1,4 @@
-- name: "Install and configure awscli, kubectl, create ns and deploy defender"
+- name: "Install and configure awscli, kubectl, and create ns"
   hosts: "{{ target | default('nothing') }}"
   environment:
     AWS_ACCESS_KEY_ID: "{{ AWS_ACCESS_KEY_ID }}"
