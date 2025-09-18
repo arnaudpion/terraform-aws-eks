@@ -13,7 +13,7 @@ on:
       NAME_PREFIX:
         description: 'Prefix name for resources to be created: s3 bucket, vpc, eks, ec2, etc.'
         required: true
-        default: 'eks'
+        default: 'eks-dev'
       WORKER_NODES_NUMBER:
         description: 'Number of worker nodes in eks_cluster'
         required: true
@@ -28,7 +28,7 @@ on:
       WORKER_NODES_TYPE:
         description: 'Worker nodes type in eks_cluster'
         required: true
-        default: 't3.medium'
+        default: 't3.small'
       PUBLIC_SSH_KEY:
         description: 'Public ssh key to connect to ec2-bastion host'
         required: true
