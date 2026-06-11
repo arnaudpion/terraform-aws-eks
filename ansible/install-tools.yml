@@ -30,12 +30,14 @@
     - name: chmod kubectl
       ansible.builtin.command: sudo chmod 0755 /usr/local/bin/kubectl
 
-    - name: install pre-requisites pip3, kub, oc
-      pip:
+    - name: Install Python pre-requisites via system package manager
+      ansible.builtin.package:
         name:
-          - openshift
-          - pyyaml
-          - kubernetes 
+          - python3-openshift
+          - python3-yaml
+          - python3-kubernetes
+        state: present
+      become: true
 
     - name: Create AWS directory if it does not exist
       ansible.builtin.file:
