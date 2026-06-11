@@ -15,17 +15,20 @@ data "aws_s3_bucket" "s3-tfstate" {
   bucket = local.s3_name
 }
 
-# Ubuntu ami
+# Ubuntu 24.04 LTS AMI
 data "aws_ami" "ubuntu" {
   most_recent = true
+
   filter {
     name   = "name"
-    values = ["ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-*"]
+    values = ["ubuntu/images/hvm-ssd-gp3/ubuntu-noble-24.04-amd64-server-*"]
   }
+
   filter {
     name   = "virtualization-type"
     values = ["hvm"]
   }
+
   owners = ["099720109477"] # Canonical
 }
 
